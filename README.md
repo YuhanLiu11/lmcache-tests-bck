@@ -34,28 +34,9 @@ bash prepare_environment.sh
 The following command line runs the test `test_lmcache_local_cpu` defined in `tests/tests.py` and write the output results to the output folder (`outputs/test_lmcache_local_cpu.csv`).
 
 ```bash
-python3 main.py tests/tests.py -f test_lmcache_local_cpu -o outputs/
+python3 main.py tests/tests.py -f test_lmcache_remote_cachegen -o outputs/
 ```
-
-To process the result, please run
-```bash
-cd outputs/
-python3 process_result.py
-```
-Then, a pdf file `test_lmcache_local_cpu.pdf` will be created.
-
-You can also monitor the following files to check the status of the bootstrapped vllm process.
-
-For stderr:
-```bash
-tail -f /tmp/8000-stderr.log
-```
-
-For stdout:
-```bash
-tail -f /tmp/8000-stdout.log
-```
-
+Note: running this command will produce the log we've discussed before. 
 
 ### 2.2 Usage of main.py
 
